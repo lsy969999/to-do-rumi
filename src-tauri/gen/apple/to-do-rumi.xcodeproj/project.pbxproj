@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11012C9ACF5F96340E9463A0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24F34263581FF6E1117FD1E /* WebKit.framework */; };
+		166A17491C64A93FC542AADE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D0D14FDC4EB0F1E5879B76 /* CoreGraphics.framework */; };
+		3D633E6F6478860E962CC56E /* libto_do_rumi_lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05248FFA07505C10CB53AD0B /* libto_do_rumi_lib.a */; };
+		3EC4B1D0C2D42B6227C05C78 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B6E4D0BFBD5D6F722DB78D /* Metal.framework */; };
+		4CF2504617094A6BFD5BA211 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 97C08FDFEAA46E1323048156 /* assets */; };
+		62B07294DBD56D64D1D76ACC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF384A26F021A64241DA35C7 /* Security.framework */; };
+		6DB42D30A8D892D8814762FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7EF0F7D7DD3AF71DA9775C /* LaunchScreen.storyboard */; };
+		8D21AB93E42DEE3F11C7C681 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569F2507B4D2581158D35F14 /* QuartzCore.framework */; };
+		9B52F204C1350F99F9D19752 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70DC3786A851AFE88CF7A547 /* main.mm */; };
+		9BC4926CD1B3971C52062F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325A8B1B70FCA5813BF2237 /* UIKit.framework */; };
+		A830CCB038E6F59BEF18782D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A964B9FC2F0DCCF912210E59 /* Assets.xcassets */; };
+		B30002E514F33B8BB0497170 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BBBD4463221D0890FBED09 /* MetalKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0325A8B1B70FCA5813BF2237 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		05248FFA07505C10CB53AD0B /* libto_do_rumi_lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libto_do_rumi_lib.a; sourceTree = "<group>"; };
+		1437E993F587DC3221F10855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3356EB257931A3F0329B60EF /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		56409C9B6FEB0BF116B29E1F /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		569F2507B4D2581158D35F14 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		65D0D14FDC4EB0F1E5879B76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		70DC3786A851AFE88CF7A547 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		79A8AA6C537B769D04E413BF /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		82E89348CF9602953C0DB8F9 /* to-do-rumi_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "to-do-rumi_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97BBBD4463221D0890FBED09 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		97C08FDFEAA46E1323048156 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		A964B9FC2F0DCCF912210E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C24F34263581FF6E1117FD1E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CE7EF0F7D7DD3AF71DA9775C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2B6E4D0BFBD5D6F722DB78D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		DF384A26F021A64241DA35C7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ED029836E61CD63F36307237 /* to-do-rumi_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "to-do-rumi_iOS.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6ED415AC2F8E1B4E8709A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D633E6F6478860E962CC56E /* libto_do_rumi_lib.a in Frameworks */,
+				166A17491C64A93FC542AADE /* CoreGraphics.framework in Frameworks */,
+				3EC4B1D0C2D42B6227C05C78 /* Metal.framework in Frameworks */,
+				B30002E514F33B8BB0497170 /* MetalKit.framework in Frameworks */,
+				8D21AB93E42DEE3F11C7C681 /* QuartzCore.framework in Frameworks */,
+				62B07294DBD56D64D1D76ACC /* Security.framework in Frameworks */,
+				9BC4926CD1B3971C52062F7A /* UIKit.framework in Frameworks */,
+				11012C9ACF5F96340E9463A0 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01647320829A224E8A23651C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82E89348CF9602953C0DB8F9 /* to-do-rumi_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FA3AAD2943AA5116303325E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65D0D14FDC4EB0F1E5879B76 /* CoreGraphics.framework */,
+				05248FFA07505C10CB53AD0B /* libto_do_rumi_lib.a */,
+				D2B6E4D0BFBD5D6F722DB78D /* Metal.framework */,
+				97BBBD4463221D0890FBED09 /* MetalKit.framework */,
+				569F2507B4D2581158D35F14 /* QuartzCore.framework */,
+				DF384A26F021A64241DA35C7 /* Security.framework */,
+				0325A8B1B70FCA5813BF2237 /* UIKit.framework */,
+				C24F34263581FF6E1117FD1E /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33D79C0DAD983ACCFA0A6FF1 /* to-do-rumi_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1437E993F587DC3221F10855 /* Info.plist */,
+				ED029836E61CD63F36307237 /* to-do-rumi_iOS.entitlements */,
+			);
+			path = "to-do-rumi_iOS";
+			sourceTree = "<group>";
+		};
+		470E829DC1174544E7A2EE1B /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				3356EB257931A3F0329B60EF /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		4F513CC4ECE8963D4AB9D1E3 /* to-do-rumi */ = {
+			isa = PBXGroup;
+			children = (
+				70DC3786A851AFE88CF7A547 /* main.mm */,
+				470E829DC1174544E7A2EE1B /* bindings */,
+			);
+			path = "to-do-rumi";
+			sourceTree = "<group>";
+		};
+		6F3415D5A9D1030770FA7DA2 = {
+			isa = PBXGroup;
+			children = (
+				97C08FDFEAA46E1323048156 /* assets */,
+				A964B9FC2F0DCCF912210E59 /* Assets.xcassets */,
+				CE7EF0F7D7DD3AF71DA9775C /* LaunchScreen.storyboard */,
+				D34456550B0D570892F7BACE /* Externals */,
+				70A1C79E8DB676001EA52499 /* Sources */,
+				8374EB0223FFCB88584DC4D5 /* src */,
+				33D79C0DAD983ACCFA0A6FF1 /* to-do-rumi_iOS */,
+				2FA3AAD2943AA5116303325E /* Frameworks */,
+				01647320829A224E8A23651C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70A1C79E8DB676001EA52499 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4F513CC4ECE8963D4AB9D1E3 /* to-do-rumi */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8374EB0223FFCB88584DC4D5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				56409C9B6FEB0BF116B29E1F /* lib.rs */,
+				79A8AA6C537B769D04E413BF /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		D34456550B0D570892F7BACE /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CA9D6E7FA4D0F33298FF058 /* to-do-rumi_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D437F88687A3723F15DB9D0B /* Build configuration list for PBXNativeTarget "to-do-rumi_iOS" */;
+			buildPhases = (
+				F161F519E555F785A7F3F6D6 /* Build Rust Code */,
+				1304E6FE66B02ADDDC04B7D6 /* Sources */,
+				FDC0E7836BFC06CC63484C77 /* Resources */,
+				B6ED415AC2F8E1B4E8709A41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "to-do-rumi_iOS";
+			productName = "to-do-rumi_iOS";
+			productReference = 82E89348CF9602953C0DB8F9 /* to-do-rumi_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49D7C1B7DB8E505342E7EB5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8CA9D6E7FA4D0F33298FF058 = {
+						DevelopmentTeam = DXLJDSFC2D;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4BC46F017512E5D29967E21C /* Build configuration list for PBXProject "to-do-rumi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6F3415D5A9D1030770FA7DA2;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CA9D6E7FA4D0F33298FF058 /* to-do-rumi_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDC0E7836BFC06CC63484C77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A830CCB038E6F59BEF18782D /* Assets.xcassets in Resources */,
+				6DB42D30A8D892D8814762FB /* LaunchScreen.storyboard in Resources */,
+				4CF2504617094A6BFD5BA211 /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F161F519E555F785A7F3F6D6 /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libto_do_rumi_lib.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libto_do_rumi_lib.a",
+				"$(SRCROOT)/Externals/arm64-sim/${CONFIGURATION}/libto_do_rumi_lib.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "npm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1304E6FE66B02ADDDC04B7D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B52F204C1350F99F9D19752 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		22ACCF816D27179CCBCD4789 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		A2B352D87B06C969FDC234B1 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					"arm64-sim",
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "to-do-rumi_iOS/to-do-rumi_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DXLJDSFC2D;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "to-do-rumi_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tauri.dev;
+				PRODUCT_NAME = "to-do-rumi";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64  arm64-sim";
+			};
+			name = debug;
+		};
+		A3D7C66B375601D8ED09D06B /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		B662895B7D3FFFD05E474631 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					"arm64-sim",
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "to-do-rumi_iOS/to-do-rumi_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DXLJDSFC2D;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "to-do-rumi_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tauri.dev;
+				PRODUCT_NAME = "to-do-rumi";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64  arm64-sim";
+			};
+			name = release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BC46F017512E5D29967E21C /* Build configuration list for PBXProject "to-do-rumi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3D7C66B375601D8ED09D06B /* debug */,
+				22ACCF816D27179CCBCD4789 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		D437F88687A3723F15DB9D0B /* Build configuration list for PBXNativeTarget "to-do-rumi_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2B352D87B06C969FDC234B1 /* debug */,
+				B662895B7D3FFFD05E474631 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49D7C1B7DB8E505342E7EB5F /* Project object */;
+}
