@@ -1,6 +1,6 @@
 name: to-do-rumi
 options:
-  bundleIdPrefix: com.tauri.dev
+  bundleIdPrefix: lsy969999.todorumi
   deploymentTarget:
     iOS: 13.0
 fileGroups: [../../src]
@@ -11,7 +11,7 @@ settingGroups:
   app:
     base:
       PRODUCT_NAME: to-do-rumi
-      PRODUCT_BUNDLE_IDENTIFIER: com.tauri.dev
+      PRODUCT_BUNDLE_IDENTIFIER: lsy969999.todorumi
       DEVELOPMENT_TEAM: DXLJDSFC2D
       CODE_SIGN_STYLE: Automatic
 targetTemplates:

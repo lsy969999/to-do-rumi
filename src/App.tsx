@@ -1,6 +1,8 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
+import "./App.css";
+import { alertMessage, confirmMessage } from "./ffi";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -48,6 +50,14 @@ function App() {
       <div className="border bg-red-400">
         asdf
       </div>
+
+      <button onClick={async () => { await alertMessage('hi') }} className="border bg-indigo-400 text-white">
+        alert
+      </button>
+
+      <button onClick={async () => { await confirmMessage('hi') }} className="border bg-indigo-400 text-white">
+        confirm
+      </button>
     </div>
   );
 }

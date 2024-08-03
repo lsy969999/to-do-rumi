@@ -1,7 +1,7 @@
 {
   "productName": "to-do-rumi",
   "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "lsy969999.todorumi",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",

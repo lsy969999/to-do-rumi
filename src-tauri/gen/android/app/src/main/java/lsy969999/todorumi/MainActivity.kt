@@ -1,3 +1,3 @@
-package com.tauri.dev
+package lsy969999.todorumi
 
 class MainActivity : TauriActivity()
