@@ -25,11 +25,3 @@ export async function confirmMessage(msg: string) {
         window.confirm(msg);
     }
 }
-
-export async function toast(msg: string) {
-    if (isTauri()) {
-        // TODO
-    } else {
-        // TODO
-    }
-}

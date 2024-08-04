@@ -1,12 +1,15 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
-import "./App.css";
 import { alertMessage, confirmMessage } from "./ffi";
+import toast, { Toaster } from "react-hot-toast";
 
-function App() {
+function Test() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+
+  const test = import.meta.env.VITE_TEST;
+  console.log('test', test)
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -58,8 +61,13 @@ function App() {
       <button onClick={async () => { await confirmMessage('hi') }} className="border bg-indigo-400 text-white">
         confirm
       </button>
+
+      <button onClick={async () => { toast('Here is your toast.') }} className="border bg-indigo-400 text-white">
+        toast
+      </button>
+      <Toaster />
     </div>
   );
 }
 
-export default App;
+export default Test;
