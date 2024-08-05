@@ -12,6 +12,7 @@ links = "tauri-plugin-sqlite"
 tauri = { version = "2.0.0-rc.0" }
 serde = "1.0"
 thiserror = "1.0"
+dunce = "1.0.5"
 
 [target.'cfg(any(target_os = "windows", target_os = "macos", target_os = "linux"))'.dependencies]
 rusqlite = { version = "0.32.1", features = ["bundled"] }

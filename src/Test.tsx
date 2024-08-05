@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { alertMessage, confirmMessage } from "./ffi";
+import { alertMessage, confirmMessage, platform, store_clear, store_get, store_keys, store_remove, store_set } from "./ffi";
 import toast, { Toaster } from "react-hot-toast";
 import { ping } from '../plugins/tauri-plugin-sqlite/guest-js'
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
-
-  const test = import.meta.env.VITE_TEST;
-  console.log('test', test)
+  const [kvKey, setKvKey] = useState("");
+  const [kvVal, setKvVal] = useState("");
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -52,10 +51,24 @@ function Test() {
         toast
       </button>
       <Toaster />
-      <div className="border-b-2"></div>
-      <button onClick={pingtest } className="border bg-indigo-400 text-white">
+      <button onClick={() => { const plf = platform(); setGreetMsg(plf); }} className="border bg-indigo-400 text-white">
+        platform
+      </button>
+      <div className="border-b-2 "></div>
+      <button onClick={pingtest } className="p-2 m-2 border bg-indigo-400 text-white">
         ping
       </button>
+      <div className="border-b-2 "></div>
+      <div className="p-2">
+        <span>key: [{kvKey}], val: [{kvVal}]</span>
+        <input className="border" onChange={(e) => setKvKey(e.currentTarget.value)} placeholder="key" />
+        <input className="border" onChange={(e) => setKvVal(e.currentTarget.value)} placeholder="val" />
+        <button onClick={async() => {const v = await store_get(kvKey); setKvVal(JSON.stringify(v))}} className="border p-2 m-2 bg-indigo-400 text-white">get</button>
+        <button onClick={async() => {await store_set(kvKey, kvVal); }} className="border p-2 m-2 bg-indigo-400 text-white">set</button>
+        <button onClick={async() => {await store_remove(kvKey); }} className="border p-2 m-2 bg-indigo-400 text-white">del</button>
+        <button onClick={async() => {await store_clear(); }} className="border p-2 m-2 bg-indigo-400 text-white">clear</button>
+        <button onClick={async() => { console.log(await store_keys()); }} className="border p-2 m-2 bg-indigo-400 text-white">keys</button>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,7 @@
-use std::{env, fs, path::PathBuf};
 
 use rusqlite::Connection;
 use serde::de::DeserializeOwned;
-use tauri::{plugin::PluginApi, AppHandle, Runtime};
-
+use tauri::{plugin::PluginApi, AppHandle, Manager, Runtime};
 use crate::models::*;
 
 #[derive(Debug)]
@@ -13,60 +11,14 @@ struct Person {
     data: Option<Vec<u8>>,
 }
 
-fn get_db_path_window() -> PathBuf {
-    let app_data_dir = env::var("LOCALAPPDATA").unwrap_or_else(|_| ".".into());
-    let db_path = PathBuf::from(app_data_dir).join("MyApp").join("example.db");
-    
-    // 디렉토리가 없는 경우 생성
-    if let Some(parent) = db_path.parent() {
-        fs::create_dir_all(parent).unwrap();
-    }
-
-    db_path
-}
-
-fn get_db_path_mac() -> PathBuf {
-    let home_dir = env::var("HOME").unwrap_or_else(|_| ".".into());
-    let db_path = PathBuf::from(home_dir)
-        .join("Library")
-        .join("Application Support")
-        .join("MyApp")
-        .join("example.db");
-
-    // 디렉토리가 없는 경우 생성
-    if let Some(parent) = db_path.parent() {
-        fs::create_dir_all(parent).unwrap();
-    }
-
-    db_path
-}
-
-fn get_db_path_linux() -> PathBuf {
-    let home_dir = env::var("HOME").unwrap_or_else(|_| ".".into());
-    let db_path = PathBuf::from(home_dir)
-        .join(".myapp")
-        .join("example.db");
-
-    // 디렉토리가 없는 경우 생성
-    if let Some(parent) = db_path.parent() {
-        fs::create_dir_all(parent).unwrap();
-    }
-
-    db_path
-}
-
 pub fn init<R: Runtime, C: DeserializeOwned>(
   app: &AppHandle<R>,
   _api: PluginApi<R, C>,
 ) -> crate::Result<Sqlite<R>> {
-    #[cfg(target_os = "windows")]
-    let db_path = get_db_path_window();
-    #[cfg(target_os = "macos")]
-    let db_path = get_db_path_linux();
-    #[cfg(target_os = "linux")]
-    let db_path = get_db_path_linux();
+    let mut app_data_dir = app.path().app_data_dir()?;
+    app_data_dir.push("example.db");
 
-    let conn = Connection::open(db_path)?;
+    let conn = Connection::open(dunce::simplified(app_data_dir.as_path()))?;
     conn.execute(
         "CREATE TABLE IF NOT EXISTS person (
             id    INTEGER PRIMARY KEY,
