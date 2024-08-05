@@ -1,5 +1,5 @@
 {
-  "productName": "to-do-rumi",
+  "productName": "todorumi",
   "version": "0.0.0",
   "identifier": "lsy969999.todorumi",
   "build": {
@@ -11,7 +11,7 @@
   "app": {
     "windows": [
       {
-        "title": "to-do-rumi",
+        "title": "todorumi",
         "width": 800,
         "height": 600
       }

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import { alertMessage, confirmMessage } from "./ffi";
 import toast, { Toaster } from "react-hot-toast";
+import { ping } from '../plugins/tauri-plugin-sqlite/guest-js'
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -16,26 +16,16 @@ function Test() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  async function pingtest() {
+    const str = await ping('ping!');
+    setGreetMsg(str || '');
+  }
+
   return (
-    <div className="container">
+    <div >
       <h1>Welcome to Tauri!</h1>
-
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
+      <div className="border-b-2"></div>
       <form
-        className="row"
         onSubmit={(e) => {
           e.preventDefault();
           greet();
@@ -48,12 +38,8 @@ function Test() {
         />
         <button type="submit">Greet</button>
       </form>
-
       <p>{greetMsg}</p>
-      <div className="border bg-red-400">
-        asdf
-      </div>
-
+      <div className="border-b-2"></div>
       <button onClick={async () => { await alertMessage('hi') }} className="border bg-indigo-400 text-white">
         alert
       </button>
@@ -66,6 +52,10 @@ function Test() {
         toast
       </button>
       <Toaster />
+      <div className="border-b-2"></div>
+      <button onClick={pingtest } className="border bg-indigo-400 text-white">
+        ping
+      </button>
     </div>
   );
 }

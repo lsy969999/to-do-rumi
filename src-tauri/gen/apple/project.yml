@@ -10,7 +10,7 @@ configs:
 settingGroups:
   app:
     base:
-      PRODUCT_NAME: to-do-rumi
+      PRODUCT_NAME: todorumi
       PRODUCT_BUNDLE_IDENTIFIER: lsy969999.todorumi
       DEVELOPMENT_TEAM: DXLJDSFC2D
       CODE_SIGN_STYLE: Automatic
