@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-insert-todo"
+description = "Enables the insert_todo command without any pre-configured scope."
+commands.allow = ["insert_todo"]
+
+[[permission]]
+identifier = "deny-insert-todo"
+description = "Denies the insert_todo command without any pre-configured scope."
+commands.deny = ["insert_todo"]

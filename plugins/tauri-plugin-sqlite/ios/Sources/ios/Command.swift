@@ -18,3 +18,15 @@ struct PingRes: Encodable {
 struct GetDbUserVersionRes: Encodable {
     let version: Int32?
 }
+
+struct GetAllTodoRes: Encodable {
+    let todos: [Todo]
+}
+
+struct InsertTodoReq: Decodable {
+    let todo: String
+}
+
+struct InsertTodoRes: Encodable {
+    let rowid: Int64
+}

@@ -18,3 +18,18 @@ pub(crate) async fn get_db_user_version<R: Runtime>(
 ) -> Result<GetDbUserVersionRes> {
     app.sqlite().get_db_user_version(GetDbUserVersionReq)
 }
+
+#[command]
+pub(crate) async fn get_all_todo<R: Runtime>(
+    app: AppHandle<R>,
+) -> Result<GetAllTodoRes> {
+    app.sqlite().get_all_todo(GetAllTodoReq)
+}
+
+#[command]
+pub(crate) async fn insert_todo<R: Runtime>(
+    app: AppHandle<R>,
+    payload: InsertTodoReq,
+) -> Result<InsertTodoRes> {
+    app.sqlite().insert_todo(payload)
+}

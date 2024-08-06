@@ -65,8 +65,13 @@ impl<R: Runtime> Sqlite<R> {
 
   pub fn get_db_user_version(&self, payload: GetDbUserVersionReq) -> crate::Result<GetDbUserVersionRes> {
     todo!()
-    // Ok(GetDbUserVersionRes {
-    //   version: 0,
-    // })
+  }
+
+  pub fn get_all_todo(&self, payload: GetAllTodoReq) -> crate::Result<GetAllTodoRes> {
+    todo!()
+  }
+
+  pub fn insert_todo(&self, payload: InsertTodoReq) -> crate::Result<InsertTodoRes> {
+    todo!()
   }
 }

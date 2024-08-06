@@ -33,6 +33,16 @@ class SqlitePlugin: Plugin {
         let version = self.db.userVersion;
         invoke.resolve(GetDbUserVersionRes(version: version));
     }
+    @objc public func get_all_todo(_ invoke: Invoke) throws {
+        let todos = try getAllTodo(db: self.db);
+        Logger.debug(todos)
+        invoke.resolve(GetAllTodoRes(todos: todos));
+    }
+    @objc public func insert_todo(_ invoke: Invoke) throws {
+        let args = try invoke.parseArgs(InsertTodoReq.self);
+        let rowid = try insertTodo(db: self.db, todo: args.todo);
+        invoke.resolve(InsertTodoRes(rowid: rowid));
+    }
 }
 
 @_cdecl("init_plugin_sqlite")

@@ -15,3 +15,25 @@ export async function get_db_user_version(): Promise<number | null> {
         return (r.version ? r.version : null)
     });
 }
+
+export type Todo = {
+    sn: number
+    todo: string
+}
+
+export async function get_all_todo(): Promise<Todo[]> {
+    return await invoke<Todo[]>('plugin:sqlite|get_all_todo').then((r) => {
+        console.log(r)
+        return r
+    });
+}
+
+export async function insert_todo(todo: string): Promise<number | null> {
+    return await invoke<{rowid: number}>('plugin:sqlite|insert_todo', {
+      payload: {
+        todo,
+      },
+    }).then((r) => {
+      return (r.rowid ? r.rowid : null)
+    });
+  }

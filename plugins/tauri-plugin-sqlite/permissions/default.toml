@@ -1,3 +1,3 @@
 [default]
 description = "Default permissions for the plugin"
-permissions = ["allow-ping", "allow-get-db-user-version"]
+permissions = ["allow-ping", "allow-get-db-user-version", "allow-get-all-todo", "allow-insert-todo"]

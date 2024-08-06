@@ -41,4 +41,18 @@ impl<R: Runtime> Sqlite<R> {
       .run_mobile_plugin("get_db_user_version", payload)
       .map_err(Into::into)
   }
+
+  pub fn get_all_todo(&self, payload: GetAllTodoReq) -> crate::Result<GetAllTodoRes> {
+    self
+      .0
+      .run_mobile_plugin("get_all_todo", payload)
+      .map_err(Into::into)
+  }
+
+  pub fn insert_todo(&self, payload: InsertTodoReq) -> crate::Result<InsertTodoRes> {
+    self
+      .0
+      .run_mobile_plugin("insert_todo", payload)
+      .map_err(Into::into)
+  }
 }

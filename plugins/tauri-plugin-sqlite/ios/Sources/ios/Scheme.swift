@@ -126,3 +126,17 @@ func todolumi_migration_1_to_2(db: Connection) throws {
     }
     Logger.debug("[todolumi_migration_1_to_2] end!")
 }
+
+
+struct Todo: Codable {
+    let sn: Int64
+    let todo: String
+}
+
+struct TodoGroup: Codable {
+    
+}
+
+struct User: Codable {
+    
+}
