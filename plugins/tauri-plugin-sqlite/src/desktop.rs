@@ -62,4 +62,11 @@ impl<R: Runtime> Sqlite<R> {
       value: payload.value,
     })
   }
+
+  pub fn get_db_user_version(&self, payload: GetDbUserVersionReq) -> crate::Result<GetDbUserVersionRes> {
+    todo!()
+    // Ok(GetDbUserVersionRes {
+    //   version: 0,
+    // })
+  }
 }

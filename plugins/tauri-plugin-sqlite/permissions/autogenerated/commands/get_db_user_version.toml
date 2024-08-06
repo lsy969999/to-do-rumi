@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-get-db-user-version"
+description = "Enables the get_db_user_version command without any pre-configured scope."
+commands.allow = ["get_db_user_version"]
+
+[[permission]]
+identifier = "deny-get-db-user-version"
+description = "Denies the get_db_user_version command without any pre-configured scope."
+commands.deny = ["get_db_user_version"]

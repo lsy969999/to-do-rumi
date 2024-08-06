@@ -14,3 +14,7 @@ struct PingReq: Decodable {
 struct PingRes: Encodable {
     let value: String?
 }
+
+struct GetDbUserVersionRes: Encodable {
+    let version: Int32?
+}

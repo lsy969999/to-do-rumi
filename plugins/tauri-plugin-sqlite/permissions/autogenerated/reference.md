@@ -3,6 +3,7 @@
 Default permissions for the plugin
 
 - `allow-ping`
+- `allow-get-db-user-version`
 
 ### Permission Table 
 
@@ -12,6 +13,32 @@ Default permissions for the plugin
 <th>Description</th>
 </tr>
 
+
+<tr>
+<td>
+
+`sqlite:allow-get-db-user-version`
+
+</td>
+<td>
+
+Enables the get_db_user_version command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`sqlite:deny-get-db-user-version`
+
+</td>
+<td>
+
+Denies the get_db_user_version command without any pre-configured scope.
+
+</td>
+</tr>
 
 <tr>
 <td>

@@ -35,7 +35,7 @@ impl<R: Runtime, T: Manager<R>> crate::SqliteExt<R> for T {
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
   Builder::new("sqlite")
-    .invoke_handler(tauri::generate_handler![commands::ping])
+    .invoke_handler(tauri::generate_handler![commands::ping, commands::get_db_user_version])
     .setup(|app, api| {
       #[cfg(mobile)]
       let sqlite = mobile::init(app, api)?;

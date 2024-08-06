@@ -30,7 +30,8 @@ class SqlitePlugin: Plugin {
         invoke.resolve(PingRes(value: args.value))
     }
     @objc public func get_db_user_version(_ invoke: Invoke) throws {
-        
+        let version = self.db.userVersion;
+        invoke.resolve(GetDbUserVersionRes(version: version));
     }
 }
 

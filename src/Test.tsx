@@ -2,7 +2,7 @@ import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { alertMessage, confirmMessage, platform, store_clear, store_get, store_keys, store_remove, store_set } from "./ffi";
 import toast, { Toaster } from "react-hot-toast";
-import { ping } from '../plugins/tauri-plugin-sqlite/guest-js'
+import { ping, get_db_user_version } from '../plugins/tauri-plugin-sqlite/guest-js'
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -68,6 +68,11 @@ function Test() {
         <button onClick={async() => {await store_remove(kvKey); }} className="border p-2 m-2 bg-indigo-400 text-white">del</button>
         <button onClick={async() => {await store_clear(); }} className="border p-2 m-2 bg-indigo-400 text-white">clear</button>
         <button onClick={async() => { console.log(await store_keys()); }} className="border p-2 m-2 bg-indigo-400 text-white">keys</button>
+      </div>
+
+      <div className="border-b-2 "></div>
+      <div>
+        <button onClick={async () => {const v = await get_db_user_version(); setGreetMsg(JSON.stringify(v))}} className="bg-indigo-400 m-2 p-2">get_db_version</button>
       </div>
     </div>
   );
