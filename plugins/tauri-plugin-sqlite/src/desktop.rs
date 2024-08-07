@@ -3,7 +3,7 @@ use rusqlite::Connection;
 use serde::de::DeserializeOwned;
 use tauri::{plugin::PluginApi, AppHandle, Manager, Runtime};
 use crate::models::*;
-
+use crate::args::*;
 #[derive(Debug)]
 struct Person {
     id: i32,

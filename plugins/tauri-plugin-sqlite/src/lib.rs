@@ -4,6 +4,7 @@ use tauri::{
 };
 
 pub use models::*;
+pub use args::*;
 
 #[cfg(desktop)]
 mod desktop;
@@ -13,6 +14,7 @@ mod mobile;
 mod commands;
 mod error;
 mod models;
+mod args;
 
 pub use error::{Error, Result};
 
