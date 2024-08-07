@@ -1,19 +1,18 @@
 import { invoke } from '@tauri-apps/api/core'
 
-export async function ping(value: string): Promise<string | null> {
-  return await invoke<{value?: string}>('plugin:sqlite|ping', {
-    payload: {
-      value,
-    },
-  }).then((r) => {
-    return (r.value ? r.value : null)
-  });
+export async function ping(ping: string): Promise<string | null> {
+    const { value } = await invoke<{value: string | null}>('plugin:sqlite|ping', {
+        payload: {
+        value: ping,
+        },
+    });
+    console.log('value: ' +value)
+    return value
 }
 
-export async function get_db_user_version(): Promise<number | null> {
-    return await invoke<{version?: number}>('plugin:sqlite|get_db_user_version').then((r) => {
-        return (r.version ? r.version : null)
-    });
+export async function getDbUserVersion(): Promise<number | null> {
+    const { version } = await invoke<{version: number | null}>('plugin:sqlite|get_db_user_version');
+    return version;
 }
 
 export type Todo = {
@@ -21,19 +20,16 @@ export type Todo = {
     todo: string
 }
 
-export async function get_all_todo(): Promise<Todo[]> {
-    return await invoke<Todo[]>('plugin:sqlite|get_all_todo').then((r) => {
-        console.log(r)
-        return r
-    });
-}
+export async function getAllTodo(): Promise<Todo[]> {
+    const {todos} = await invoke<{todos: Todo[]}>('plugin:sqlite|get_all_todo');
+    return todos
+} 
 
-export async function insert_todo(todo: string): Promise<number | null> {
-    return await invoke<{rowid: number}>('plugin:sqlite|insert_todo', {
+export async function insertTodo(todo: string): Promise<number> {
+    const { rowid } = await invoke<{rowid: number}>('plugin:sqlite|insert_todo', {
       payload: {
         todo,
       },
-    }).then((r) => {
-      return (r.rowid ? r.rowid : null)
     });
-  }
+    return rowid;
+}

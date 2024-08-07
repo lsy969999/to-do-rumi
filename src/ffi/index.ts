@@ -61,7 +61,7 @@ export async function confirmMessage(msg: string) {
 
 
 const store = new Store('store.bin');
-export async function store_set<T>(key: string, value: T) {
+export async function storeSet<T>(key: string, value: T) {
     if (isTauri()) {
         await store.set(key, value)
     } else {
@@ -69,7 +69,7 @@ export async function store_set<T>(key: string, value: T) {
     }
 }
 
-export async function store_get<T>(key: string): Promise<T | null> {
+export async function storeGet<T>(key: string): Promise<T | null> {
     if (isTauri()) {
         return await store.get<T>(key);
     } else {
@@ -77,7 +77,7 @@ export async function store_get<T>(key: string): Promise<T | null> {
     }
 }
 
-export async function store_remove(key: string) {
+export async function storeRemove(key: string) {
     if (isTauri()) {
         await store.delete(key);
     } else {
@@ -85,7 +85,7 @@ export async function store_remove(key: string) {
     }
 }
 
-export async function store_clear() {
+export async function storeClear() {
     if (isTauri()) {
         await store.clear();
     } else {
@@ -93,7 +93,7 @@ export async function store_clear() {
     }
 }
 
-export async function store_keys(): Promise<string[]> {
+export async function storeKeys(): Promise<string[]> {
     if (isTauri()) {
         return await store.keys();
     } else {

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { alertMessage, confirmMessage, platform, store_clear, store_get, store_keys, store_remove, store_set } from "./ffi";
+import { alertMessage, confirmMessage, platform, storeClear, storeGet, storeKeys, storeRemove, storeSet } from "./ffi";
 import toast, { Toaster } from "react-hot-toast";
-import { ping, get_db_user_version, get_all_todo, insert_todo } from '../plugins/tauri-plugin-sqlite/guest-js'
+import { ping, getDbUserVersion, getAllTodo, insertTodo, Todo } from '../plugins/tauri-plugin-sqlite/guest-js'
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -10,6 +10,7 @@ function Test() {
   const [kvKey, setKvKey] = useState("");
   const [kvVal, setKvVal] = useState("");
   const [testTodo, setTestTodo] = useState("");
+  const [todoData, setTodoData] = useState<Todo[]>([]);
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -22,13 +23,15 @@ function Test() {
   }
 
   async function handleInsertTodo() {
-    const rowid = await insert_todo(testTodo);
+    const rowid = await insertTodo(testTodo);
     console.log('inesrt row id', rowid);
   }
 
   async function handleGetAllTodo() {
-    const todos = await get_all_todo()
+    const todos = await getAllTodo()
     console.log('todos:', todos)
+    setTodoData(todos)
+    console.log(todoData)
   }
 
   return (
@@ -74,22 +77,27 @@ function Test() {
         <span>key: [{kvKey}], val: [{kvVal}]</span>
         <input className="border" onChange={(e) => setKvKey(e.currentTarget.value)} placeholder="key" />
         <input className="border" onChange={(e) => setKvVal(e.currentTarget.value)} placeholder="val" />
-        <button onClick={async() => {const v = await store_get(kvKey); setKvVal(JSON.stringify(v))}} className="border p-2 m-2 bg-indigo-400 text-white">get</button>
-        <button onClick={async() => {await store_set(kvKey, kvVal); }} className="border p-2 m-2 bg-indigo-400 text-white">set</button>
-        <button onClick={async() => {await store_remove(kvKey); }} className="border p-2 m-2 bg-indigo-400 text-white">del</button>
-        <button onClick={async() => {await store_clear(); }} className="border p-2 m-2 bg-indigo-400 text-white">clear</button>
-        <button onClick={async() => { console.log(await store_keys()); }} className="border p-2 m-2 bg-indigo-400 text-white">keys</button>
+        <button onClick={async() => {const v = await storeGet(kvKey); setKvVal(JSON.stringify(v))}} className="border p-2 m-2 bg-indigo-400 text-white">get</button>
+        <button onClick={async() => {await storeSet(kvKey, kvVal); }} className="border p-2 m-2 bg-indigo-400 text-white">set</button>
+        <button onClick={async() => {await storeRemove(kvKey); }} className="border p-2 m-2 bg-indigo-400 text-white">del</button>
+        <button onClick={async() => {await storeClear(); }} className="border p-2 m-2 bg-indigo-400 text-white">clear</button>
+        <button onClick={async() => { console.log(await storeKeys()); }} className="border p-2 m-2 bg-indigo-400 text-white">keys</button>
       </div>
 
       <div className="border-b-2 "></div>
       <div>
-        <button onClick={async () => {const v = await get_db_user_version(); setGreetMsg(JSON.stringify(v))}} className="bg-indigo-400 m-2 p-2">get_db_version</button>
+        <button onClick={async () => {const v = await getDbUserVersion(); setGreetMsg(JSON.stringify(v))}} className="bg-indigo-400 m-2 p-2">get_db_version</button>
       </div>
       <div className="border-b-2 "></div>
       <div>
         <input className="border" onChange={(e) => setTestTodo(e.currentTarget.value)} placeholder="todo" />
         <button onClick={handleInsertTodo} className="border p-2 m-2 bg-indigo-400 text-white">Insert</button>
         <button onClick={handleGetAllTodo} className="border p-2 m-2 bg-indigo-400 text-white">GetAll</button>
+        {
+            todoData.map(a => {
+                return <div key={a.sn}>{a.todo}</div>
+            })
+        }
       </div>
     </div>
   );
