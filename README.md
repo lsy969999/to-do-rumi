@@ -13,43 +13,47 @@
 
 sqlite dbname: todolumi.db
 
+date -> str iso
+bool -> int (1 or 0)
+
 table user 
-    sn
-    uuid
-    is_deleted
-    created_by
-    created_at
-    updated_by
-    updated_at
+    sn int pk auto
+    name str?
+    uuid str?
+    is_deleted bool default false
+    created_by int? 
+    created_at date default now
+    updated_by int? 
+    updated_at date default now
 
 
 talbe todo
-    sn
-    is_clear
-    progress
-    todo
-    todo_group_sn
-    order
-    start_at
-    end_at
-    is_repeat
-    repeat_type
-    is_alarm
-    alarm_type
-    is_deleted
-    deleted_at
-    created_by
-    created_at
-    updated_by
-    updated_at
+    sn int pk auto
+    todo_group_sn int?
+    todo str
+    is_clear bool default false
+    progress int default 0
+    order int?
+    start_at date?
+    end_at date?
+    is_repeat bool default false
+    repeat_type str? 
+    is_alarm bool default false
+    alarm_type str?
+    is_deleted bool default false
+    created_by int? 
+    created_at date default now
+    updated_by int? 
+    updated_at date default now
+
 table todo_group
-    sn
-    name
-    is_deleted
-    created_by
-    created_at
-    updated_by
-    updated_at
+    sn int pk auto
+    name str
+    is_deleted bool default false
+    created_by int? 
+    created_at date default now
+    updated_by int? 
+    updated_at date default now
 
 table todo_tag
     sn

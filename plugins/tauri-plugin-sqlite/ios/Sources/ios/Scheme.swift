@@ -67,19 +67,16 @@ func todolumi_migration_0_to_1(db: Connection) throws {
     try db.transaction {
         // user_table 생성
         try db.run(tb_user.create(ifNotExists: true) { t in
-            t.column(user_sn, primaryKey: true);
+            t.column(user_sn, primaryKey: .autoincrement);
             t.column(user_name);
             t.column(user_uuid);
             // common
             t.column(is_deleted, defaultValue: b_false);
-            t.column(deleted_at);
             t.column(created_at, defaultValue: Date());
-            t.column(created_by, defaultValue: local_user_sn);
+            t.column(created_by);
             t.column(updated_at, defaultValue: Date());
-            t.column(updated_by, defaultValue: local_user_sn);
+            t.column(updated_by);
         });
-        // user 생성 0은 로컬 유저로
-        try db.run(tb_user.insert(user_sn <- local_user_sn, user_name <- "LOCAL_USER"));
         
         // todo_group_table 생성
         try db.run(tb_todo_group.create(ifNotExists: true) { t in
@@ -87,12 +84,13 @@ func todolumi_migration_0_to_1(db: Connection) throws {
             t.column(todo_group_name);
             // common
             t.column(is_deleted, defaultValue: b_false);
-            t.column(deleted_at);
             t.column(created_at, defaultValue: Date());
-            t.column(created_by, defaultValue: local_user_sn);
+            t.column(created_by);
             t.column(updated_at, defaultValue: Date());
-            t.column(updated_by, defaultValue: local_user_sn);
+            t.column(updated_by);
         });
+        
+        // todo table 생성
         try db.run(tb_todo.create(ifNotExists: true) { t in
             t.column(todo_sn, primaryKey: .autoincrement);
             t.column(todo_todo_group_sn);
@@ -108,11 +106,10 @@ func todolumi_migration_0_to_1(db: Connection) throws {
             t.column(todo_alarm_type);
             // common
             t.column(is_deleted, defaultValue: b_false);
-            t.column(deleted_at);
             t.column(created_at, defaultValue: Date());
-            t.column(created_by, defaultValue: local_user_sn);
+            t.column(created_by);
             t.column(updated_at, defaultValue: Date());
-            t.column(updated_by, defaultValue: local_user_sn);
+            t.column(updated_by);
         });
         db.userVersion = 1
     }

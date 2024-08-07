@@ -29,18 +29,17 @@ class SqlitePlugin: Plugin {
         let args = try invoke.parseArgs(PingReq.self)
         invoke.resolve(PingRes(value: args.value))
     }
-    @objc public func get_db_user_version(_ invoke: Invoke) throws {
+    @objc public func getDbUserVersion(_ invoke: Invoke) throws {
         let version = self.db.userVersion;
         invoke.resolve(GetDbUserVersionRes(version: version));
     }
-    @objc public func get_all_todo(_ invoke: Invoke) throws {
-        let todos = try getAllTodo(db: self.db);
-        Logger.debug(todos)
+    @objc public func getAllTodo(_ invoke: Invoke) throws {
+        let todos = try TodoDao.getAllTodo(db: self.db);
         invoke.resolve(GetAllTodoRes(todos: todos));
     }
-    @objc public func insert_todo(_ invoke: Invoke) throws {
+    @objc public func insertTodo(_ invoke: Invoke) throws {
         let args = try invoke.parseArgs(InsertTodoReq.self);
-        let rowid = try insertTodo(db: self.db, todo: args.todo);
+        let rowid = try TodoDao.insertTodo(db: self.db, todo: args.todo);
         invoke.resolve(InsertTodoRes(rowid: rowid));
     }
 }
