@@ -1,13 +1,7 @@
 package lsy969999.plugin.todolumi.sqlite
 
 import android.content.Context
-import androidx.room.ColumnInfo
-import androidx.room.Dao
 import androidx.room.Database
-import androidx.room.Entity
-import androidx.room.Insert
-import androidx.room.PrimaryKey
-import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
@@ -29,16 +23,14 @@ class Converters {
     }
 }
 
-@Database(entities = [TbUser::class, TbTodoGroup::class, TbTodo::class], version = AppDatabase.DB_VERSION, exportSchema = false)
+@Database(entities = [TbUser::class, TbTodoGroup::class, TbTodo::class], version = DB_VERSION, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun todoDao(): TodoDao
     abstract fun todoGroupDao(): TodoGroupDao
 
-    companion object {
-        const val DB_VERSION = 1;
-        private const val DB_NAME = "todolumi.db";
+    companion object {;
         @Volatile
         private var INSTANCE: AppDatabase? = null
 

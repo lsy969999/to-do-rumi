@@ -16,14 +16,14 @@ pub(crate) async fn ping<R: Runtime>(
 pub(crate) async fn get_db_user_version<R: Runtime>(
     app: AppHandle<R>,
 ) -> Result<GetDbUserVersionRes> {
-    app.sqlite().get_db_user_version(GetDbUserVersionReq)
+    app.sqlite().get_db_user_version()
 }
 
 #[command]
 pub(crate) async fn get_all_todo<R: Runtime>(
     app: AppHandle<R>,
 ) -> Result<GetAllTodoRes> {
-    app.sqlite().get_all_todo(GetAllTodoReq)
+    app.sqlite().get_all_todo()
 }
 
 #[command]

@@ -35,17 +35,17 @@ impl<R: Runtime> Sqlite<R> {
       .map_err(Into::into)
   }
 
-  pub fn get_db_user_version(&self, payload: GetDbUserVersionReq) -> crate::Result<GetDbUserVersionRes> {
+  pub fn get_db_user_version(&self) -> crate::Result<GetDbUserVersionRes> {
     self
       .0
-      .run_mobile_plugin("getDbUserVersion", payload)
+      .run_mobile_plugin("getDbUserVersion", ())
       .map_err(Into::into)
   }
 
-  pub fn get_all_todo(&self, payload: GetAllTodoReq) -> crate::Result<GetAllTodoRes> {
+  pub fn get_all_todo(&self) -> crate::Result<GetAllTodoRes> {
     self
       .0
-      .run_mobile_plugin("getAllTodo", payload)
+      .run_mobile_plugin("getAllTodo", ())
       .map_err(Into::into)
   }
 

@@ -41,8 +41,3 @@ data class TbTodo(
 ): BaseEntity() {
 
 }
-data class TodoWithTodoGroup(
-    val sn: Long,
-    val todo: String,
-    val name: String?,
-)
