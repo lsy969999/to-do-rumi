@@ -2,7 +2,8 @@ import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { alertMessage, confirmMessage, platform, storeClear, storeGet, storeKeys, storeRemove, storeSet } from "./ffi";
 import toast, { Toaster } from "react-hot-toast";
-import { ping, getDbUserVersion, getAllTodo, insertTodo, Todo } from '../plugins/tauri-plugin-sqlite/guest-js'
+import { ping, getDbUserVersion, getAllTodo, insertTodo } from '../plugins/tauri-plugin-sqlite/guest-js'
+import { Todo } from "../plugins/tauri-plugin-sqlite/guest-js/types";
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
