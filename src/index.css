@@ -1,3 +1,166 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    use-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+/* react-calendar 스타일 초기화 */
+/* 전체 달력 컴포넌트의 기본 스타일 */
+.react-calendar {
+    /* @apply bg-white border border-gray-300 rounded-lg shadow-lg p-4; */
+}
+  
+/* 두 달 보기 모드 */
+/* .react-calendar--doubleView {
+    @apply grid grid-cols-2 gap-4;
+} */
+
+/* 뷰 컨테이너 스타일 */
+/* .react-calendar__viewContainer {
+    @apply flex flex-col;
+} */
+
+/* 네비게이션 바 스타일 */
+.react-calendar__navigation {
+    @apply mb-2 flex justify-between items-center;
+}
+
+/* 네비게이션 라벨 스타일 */
+/* .react-calendar__navigation__label {
+    @apply text-lg font-semibold;
+} */
+
+/* 네비게이션 화살표 스타일 */
+/* .react-calendar__navigation__arrow {
+    @apply cursor-pointer;
+} */
+
+/* 월 뷰 스타일 */
+/* .react-calendar__month-view {
+    @apply mt-4;
+} */
+
+/* 주중 헤더 스타일 */
+/* .react-calendar__month-view__weekdays {
+    @apply flex justify-between border-b border-gray-200 mb-2;
+} */
+
+/* 개별 주중 헤더 스타일 */
+.react-calendar__month-view__weekdays__weekday {
+    @apply text-sm text-center;
+}
+/* 개별 주중 헤더 abbr 스타일 제거 */
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+}
+
+
+/* 날짜 셀 컨테이너 스타일 */
+/* .react-calendar__month-view__days {
+    @apply grid grid-cols-7 gap-1;
+} */
+
+/* 개별 날짜 셀 스타일 */
+/* .react-calendar__month-view__days__day {
+    @apply text-center p-2 hover:bg-blue-100;
+} */
+
+/* 모든 타일의 기본 스타일 */
+.react-calendar__tile {
+    @apply p-2 text-center hover:bg-gray-100 hover:rounded-full  ;
+}
+
+/* 선택된 타일 스타일 */
+.react-calendar__tile--active {
+    @apply bg-gray-100 rounded-full  ;
+}
+
+/* 오늘 날짜 타일 스타일 */
+.react-calendar__tile--now {
+    
+}
+.react-calendar__tile--now abbr {
+    /* @apply  inline-block bg-yellow-400 rounded-full text-white; */
+    @apply  bg-rose-300 rounded-full p-2 text-white;
+}
+
+/* 주말 타일 스타일 */
+.react-calendar__month-view__days__day--weekend.saturday {
+    @apply text-blue-500;
+}
+.react-calendar__month-view__days__day--weekend.sunday {
+    @apply text-red-500;
+}
+
+/* 이웃하는 월의 날짜 타일 스타일 */
+.react-calendar__month-view__days__day--neighboringMonth {
+    @apply text-gray-300;
+}
+
+/* 연도 뷰 스타일 */
+/* .react-calendar__year-view {
+    @apply mt-4;
+} */
+
+/* 연도 뷰의 월 셀 컨테이너 스타일 */
+/* .react-calendar__year-view__months {
+    @apply grid grid-cols-3 gap-4;
+} */
+
+/* 개별 월 셀 스타일 */
+/* .react-calendar__year-view__months__month {
+    @apply text-center p-2 hover:bg-blue-100;
+} */
+
+/* 10년 뷰 스타일 */
+/* .react-calendar__decade-view {
+    @apply mt-4;
+} */
+
+/* 10년 뷰의 연도 셀 컨테이너 스타일 */
+/* .react-calendar__decade-view__years {
+    @apply grid grid-cols-3 gap-4;
+} */
+
+/* 개별 연도 셀 스타일 */
+/* .react-calendar__decade-view__years__year {
+    @apply text-center p-2 hover:bg-blue-100;
+} */
+
+/* 세기 뷰 스타일 */
+/* .react-calendar__century-view {
+    @apply mt-4;
+} */
+
+/* 세기 뷰의 10년 셀 컨테이너 스타일 */
+/* .react-calendar__century-view__decades {
+    @apply grid grid-cols-3 gap-4;
+} */
+
+/* 개별 10년 셀 스타일 */
+/* .react-calendar__century-view__decades__decade {
+    @apply text-center p-2 hover:bg-blue-100;
+} */
+
+/* 범위 내의 타일 스타일 */
+/* .react-calendar__tile--range {
+    @apply bg-blue-200;
+} */
+
+/* 범위 시작 타일 스타일 */
+/* .react-calendar__tile--rangeStart {
+    @apply bg-blue-400 text-white;
+} */
+
+/* 범위 끝 타일 스타일 */
+/* .react-calendar__tile--rangeEnd {
+    @apply bg-blue-400 text-white;
+} */
+
+/* .react-calendar__tile:disabled {
+    @apply hidden
+} */

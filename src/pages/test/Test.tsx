@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { alertMessage, confirmMessage, platform, storeClear, storeGet, storeKeys, storeRemove, storeSet } from "./ffi";
+import { alertMessage, confirmMessage, platform, storeClear, storeGet, storeKeys, storeRemove, storeSet } from "../../ffi";
 import toast, { Toaster } from "react-hot-toast";
-import { ping, getDbUserVersion, getAllTodo, insertTodo } from '../plugins/tauri-plugin-sqlite/guest-js'
-import { Todo } from "../plugins/tauri-plugin-sqlite/guest-js/types";
+import { ping, getDbUserVersion, getAllTodo, insertTodo } from '../../../plugins/tauri-plugin-sqlite/guest-js'
+import { Todo } from "../../../plugins/tauri-plugin-sqlite/guest-js/types";
+import { Link } from "react-router-dom";
 
 function Test() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -100,6 +101,18 @@ function Test() {
             })
         }
       </div>
+      <Link to={"/test/calendar"}>
+        <button className="bg-indigo-400 m-2 p-2">testcalendar</button>
+      </Link>
+      <Link to={"/test/calendarcustom"}>
+        <button className="bg-indigo-400 m-2 p-2">testcalendarcustom</button>
+      </Link>
+      <Link to={"/test/gesture"}>
+        <button className="bg-indigo-400 m-2 p-2">testgesture</button>
+      </Link>
+      <Link to={"/test/date"}>
+        <button className="bg-indigo-400 m-2 p-2">testdate</button>
+      </Link>
     </div>
   );
 }
