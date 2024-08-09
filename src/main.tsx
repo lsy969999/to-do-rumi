@@ -10,6 +10,7 @@ import TestCalendar from "./pages/test/TestCalendar";
 import TestCalendarCustom from "./pages/test/TestCalendarCustom";
 import TestGesture from "./pages/test/TestGesture";
 import TestDate from "./pages/test/TestDate";
+import TestSlick from "./pages/test/TestSlick";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <Route path="/test" element={ <Layout /> }>
                 <Route index element={ <Test/> } />
                 <Route path="date" element={ <TestDate/> } />
+                <Route path="slick" element={ <TestSlick/> } />
                 <Route path="gesture" element={ <TestGesture/> } />
                 <Route path="calendar" element={ <TestCalendar/> } />
                 <Route path="calendarcustom" element={ <TestCalendarCustom/> } />

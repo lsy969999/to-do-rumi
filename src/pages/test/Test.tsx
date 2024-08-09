@@ -113,6 +113,9 @@ function Test() {
       <Link to={"/test/date"}>
         <button className="bg-indigo-400 m-2 p-2">testdate</button>
       </Link>
+      <Link to={"/test/slick"}>
+        <button className="bg-indigo-400 m-2 p-2">testslick</button>
+      </Link>
     </div>
   );
 }

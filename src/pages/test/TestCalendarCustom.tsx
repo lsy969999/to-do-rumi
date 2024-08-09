@@ -28,6 +28,7 @@ const TestCalendarCustom = () => {
         // { drag: { axis: 'y' } } // y 축으로만 드래그를 제한합니다.
       );
 
+      // isExp ? 'month' : 'week'
     const [isExp, setIsExp] = useState(true)
 
     const expandCalStyles = useSpring({
@@ -50,11 +51,19 @@ const TestCalendarCustom = () => {
     }
 
     const handleNext = () => {
-
+        if (isExp) {
+            handleNextMonth()
+        } else {
+            handleNextWeek()
+        }
     }
 
     const handlePrev = () => {
-
+        if (isExp) {
+            handlePrevMonth()
+        } else {
+            handlePrevWeek()
+        }
     }
 
     const handleNextWeek = () => {
